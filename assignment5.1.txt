@@ -1,0 +1,75 @@
+abstract class Figure { 
+double dim1; 
+Figure(double a) { 
+dim1 = a; 
+} 
+abstract void findArea(); 
+abstract void findPerimeter();
+}
+class Rectangle extends Figure { 
+Rectangle(double a) { 
+super(a); 
+} 
+// override area for rectangle 
+void findArea() { 
+System.out.println("Inside Area for Rectangle."); 
+ System.out.println(dim1 * dim1); 
+} 
+ void findPerimeter()
+{
+System.out.println("Inside perimeter for Rectangle");
+System.out.println(2*(dim1+dim1));
+}
+
+}
+
+class Triangle extends Figure { 
+Triangle(double a) { 
+super(a); 
+} 
+// override area for right triangle 
+void findArea() { 
+System.out.println("Inside Area for Triangle.");  
+System.out.println(dim1 * dim1 / 2); 
+} 
+
+void findPerimeter()
+{
+System.out.println("Inside perimeter for triangle");
+System.out.println(dim1+dim1);
+}
+}
+class Circle extends Figure
+{
+Circle( double a)
+{
+super(a);
+}
+void findPerimeter()
+{
+System.out.println("Inside perimeter for Circle");
+System.out.println(3.14*2*dim1);
+}
+void findArea() 
+{ 
+System.out.println("Inside Area Circle."); 
+ System.out.println(3.14*dim1*dim1); 
+} 
+}
+
+
+class AbstractAreas { 
+public static void main(String args[]) { 
+
+Rectangle r = new Rectangle(9); 
+Triangle t = new Triangle(10); 
+Circle c = new Circle(20);
+
+r.findArea();
+r.findPerimeter();
+t.findArea();
+t.findPerimeter();
+c.findArea();
+c.findPerimeter();
+} 
+}
